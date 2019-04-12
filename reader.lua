@@ -5,7 +5,5 @@
 
 	Solving grouping problem with the leader algorithm
 
-	main.lua: program's entry point
+	reader.lua: creating file I/O routines
 ]]
-
-require("leader")

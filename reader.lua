@@ -40,7 +40,7 @@ function read_files(pointsLoc, distLoc)
 
 		-- Creating the point and adding it to the points array:
 		point = {}
-		for word in words do table.insert(point, tonumber(word, 10)) end
+		for i = 1,#words do table.insert(point, tonumber(words[i], 10)) end
 		table.insert(points, point)
 
 	end

@@ -27,8 +27,10 @@ function calculate_results(limit, points)
 
 		-- Checking if the current point is a leader or not and treating it accordingly:
 		for j = 1,#groups do
-			if point_distance(points[groups[j][0]], points[i]) <= limit then
-				table.insert(groups[j], i)
+			if point_distance(points[groups[j][1]], points[i]) <= limit then
+				if table_contains(groups[j], i) == false then
+					table.insert(groups[j], i)
+				end
 				leader = false
 				break
 			end
@@ -37,14 +39,29 @@ function calculate_results(limit, points)
 		-- Adding a new group if the point is a leader:
 		if leader then
 			group = {i}
-			table.insert(groups[#groups + 1], group)
+			table.insert(groups, group)
 		end
 	end
 
 	-- Calculating the sum of euclidian distances:
 	sse = calculate_sse(points, groups)
 	return sse, groups
+end
 
+--[[
+	Checking if the table has the given element
+
+	Inputs: the table and the element
+
+	Output: boolean that tells if the element is in the table
+]]
+function table_contains(table, element)
+	for _, value in pairs(table) do
+		if value == element then
+			return true
+		end
+	end
+	return false
 end
 
 --[[
@@ -75,6 +92,10 @@ end
 function center_of_mass(points, group)
 
 	center = {} -- The group's center of mass
+
+	for i = 1,#points[1] do
+		center[i] = 0
+	end
 
 	for i = 1,#group do
 

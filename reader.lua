@@ -64,9 +64,9 @@ function print_results(sse, groups)
 
 	-- Printing the groups in the saida.txt file:
 	io.output(exitFile)
-	for group in groups do
-		for i = 1,#group do
-			io.write(string.format("%d ", group[i]))
+	for i = 1,#groups do
+		for j = 1,#groups[i] do
+			io.write(string.format("%d ", groups[i][j]))
 		end
 		io.write("\n\n")
 	end

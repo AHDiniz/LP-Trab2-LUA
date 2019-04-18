@@ -122,7 +122,7 @@ function calculate_sse(points, groups)
 	for i = 1,#groups do
 		center = center_of_mass(points, groups[i])
 		for j = 1,#groups[i] do
-			sse = sse + point_distance(points[groups[i][j]], center)
+			sse = sse + (point_distance(points[groups[i][j]], center) * point_distance(points[groups[i][j]], center))
 		end
 	end
 

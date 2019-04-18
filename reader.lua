@@ -63,7 +63,7 @@ function print_results(sse, groups)
 
 	-- Printing the sse in the result.txt file:
 	io.output(result)
-	io.write(string.format("%.4f", sse))
+	io.write(string.format("%.4f\n", sse))
 	io.close(result)
 
 	-- Printing the groups in the saida.txt file:

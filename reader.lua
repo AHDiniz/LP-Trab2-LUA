@@ -24,7 +24,7 @@ function read_files(pointsLoc, distLoc)
 
 	-- Reading the distance file:
 	io.input(distFile)
-	dist = tonumber(io.read(), 10)
+	dist = tonumber(io.read())
 	io.close(distFile)
 
 	-- Reading the points file:

@@ -36,11 +36,15 @@ function read_files(pointsLoc, distLoc)
 
 		-- Getting the coordinates of the point (in a string)
 		words = {}
-		for word in line:gmatch("%S+") do table.insert(words, word) end
+		for word in line:gmatch("%S+") do
+			table.insert(words, word)
+		end
 
 		-- Creating the point and adding it to the points array:
 		point = {}
-		for i = 1,#words do table.insert(point, tonumber(words[i], 10)) end
+		for i = 1,#words do
+			table.insert(point, tonumber(words[i]))
+		end
 		table.insert(points, point)
 
 	end

@@ -3,6 +3,7 @@
 
 	Alan Herculano Diniz
 
+
 	Solving grouping problem with the leader algorithm
 
 	main.lua: program's entry point
@@ -20,5 +21,6 @@ if arg[1] ~= nil and arg[2] ~= nil then
 end
 
 points, limit = read_files(pointsFile, distFile)
+
 sse, groups = calculate_results(limit, points)
 print_results(sse, groups)
